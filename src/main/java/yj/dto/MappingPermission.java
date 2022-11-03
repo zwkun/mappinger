@@ -1,11 +1,12 @@
 package yj.dto;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * url映射权限信息
  */
-public class MappingPermission {
+public class MappingPermission implements Serializable {
     /**
      * url
      */
