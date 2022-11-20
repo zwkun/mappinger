@@ -1,8 +1,8 @@
-package yj.processor;
+package checker.processor;
 
 
 
-import yj.dto.MappingPermission;
+import checker.dto.MappingPermission;
 
 import java.util.List;
 

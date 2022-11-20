@@ -1,4 +1,4 @@
-package yj.dto;
+package checker.dto;
 
 import java.io.Serializable;
 import java.util.List;

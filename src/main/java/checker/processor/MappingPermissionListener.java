@@ -1,4 +1,4 @@
-package yj.processor;
+package checker.processor;
 
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationContext;
@@ -10,8 +10,8 @@ import org.springframework.web.servlet.mvc.condition.PatternsRequestCondition;
 import org.springframework.web.servlet.mvc.condition.RequestMethodsRequestCondition;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
-import yj.annotation.Permission;
-import yj.dto.MappingPermission;
+import checker.annotation.Permission;
+import checker.dto.MappingPermission;
 
 import java.util.ArrayList;
 import java.util.List;
