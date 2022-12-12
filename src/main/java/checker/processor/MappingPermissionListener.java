@@ -1,5 +1,7 @@
 package checker.processor;
 
+import checker.annotation.Permission;
+import checker.dto.MappingPermission;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
@@ -10,8 +12,6 @@ import org.springframework.web.servlet.mvc.condition.PatternsRequestCondition;
 import org.springframework.web.servlet.mvc.condition.RequestMethodsRequestCondition;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
-import checker.annotation.Permission;
-import checker.dto.MappingPermission;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class MappingPermissionListener implements ApplicationListener<Applicatio
             throw new RuntimeException("please config：[spring.application.name]，route system name");
         }
         //获取RequestMappingHandlerMapping
-        RequestMappingHandlerMapping handlerMapping = ac.getBean(RequestMappingHandlerMapping.class);
+        RequestMappingHandlerMapping handlerMapping = ac.getBean("requestMappingHandlerMapping", RequestMappingHandlerMapping.class);
         //获取映射及方法信息
         Map<RequestMappingInfo, HandlerMethod> handlerMethods = handlerMapping.getHandlerMethods();
         List<MappingPermission> list = new ArrayList<>();
